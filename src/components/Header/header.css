@@ -1,0 +1,20 @@
+.bill-gates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 48px 0;
+    gap: 32px;
+}
+
+.bill-gates img {
+    width: 150px;
+    border-radius: 100%;
+}
+
+.bill-gates p {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}

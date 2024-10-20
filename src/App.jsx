@@ -1,33 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {useEffect, useState } from 'react';
 import './App.css'
+import Budget from './components/Budget'
+import Header from './components/Header'
+import Product from './components/Product';
+import data from './data.json';
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [myBudget, setMyBudget] = useState(100000000000);
+  const [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    // Burada, verileri yükleyebilirsin (örneğin, bir API'den).
+    setProduct(data); // JSON verisini state'e ayarla
+}, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <div className="container">
+      <Header/>
+      <Budget myBudget={myBudget}/>
+      {
+        products.map((item) => (<Product key={item.id} product={item}/>))
+      }
+     </div>
     </>
   )
 }
