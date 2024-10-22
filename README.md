@@ -20,6 +20,7 @@
 
 
 ---
+Check out my project [here](https://spend-bill-gates-money-flax.vercel.app/).
 
 ![github](/public/images/spendBillGatesMoney-1.png)
 ![github](/public/images/spendBillGatesMoney-2.png)
