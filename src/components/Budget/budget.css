@@ -1,12 +1,14 @@
 .budget {
     height:100px;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgb(46, 204, 113), rgb(26, 188, 156));
-    margin-top: 24px;
-    position: sticky;
+    margin: 16px 0;
     color: #fff;
     font-size: 32px;
     font-weight: 600;
 }
+
