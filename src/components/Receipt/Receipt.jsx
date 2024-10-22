@@ -10,17 +10,17 @@ export default function Receipt({ items }) {
             <div className="basket">
                 {items.map((item, index) => (
                     <div key={index} className="basket-products">
-                        <p className="basket-products-name" style={{ fontSize: '20px', fontWeight: '400', color: '#333' }}>{item.productName}</p>
+                        <p className="basket-products-name" >{item.productName}</p>
                         <div className="basket-quantity">
-                            <p style={{ fontSize: '20px', fontWeight: '400', color: '#333' }}><span>x</span>{item.productQuantity}</p>
-                            <p style={{ color: '#24c486', fontSize: '20px' }}><span>$</span>{item.productAmount}</p>
+                            <p className="basket-quantity-product"><span>x</span>{item.productQuantity}</p>
+                            <p className="basket-quantity-amount"><span>$</span>{item.productAmount}</p>
                         </div>
                     </div>
                 ))}
                 <hr />
                 <div className="basket-total">
-                    <p style={{ fontSize: '20px', fontWeight: '600', color: '#333' }}>TOTAL</p>
-                    <p style={{ color: '#24c486', fontSize: '20px' }}><span>$</span>{totalAmount}</p>
+                    <p className='basket-total-name'>TOTAL</p>
+                    <p className='basket-total-amount'><span>$</span>{totalAmount}</p>
                 </div>
             </div>
         </div>

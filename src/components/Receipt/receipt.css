@@ -35,3 +35,57 @@
     width: 50%;
     justify-content: space-between;
 }
+
+.basket-total-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.basket-total-amount {
+    color: #24c486;
+    font-size: 20px;
+} 
+
+.basket-products-name {
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+}
+.basket-quantity-amount{
+    color: #24c486;
+    font-size: 20px;
+}
+
+
+.basket-quantity-product {
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+}
+
+@media (max-width: 576px) {
+
+    .basket {
+        min-width: 100%;
+    }
+    .receipt-container {
+        padding: 4px;
+    }
+
+    .receipt {
+        font-size: 16px;
+    }
+
+    .basket-quantity.p:first-child {
+        font-size: 12px;
+    }
+
+    .basket-total-name,
+    .basket-total-amount,
+    .basket-products-name,
+    .basket-quantity-amount,
+    .basket-quantity-product {
+        font-size: 16px;
+    }
+}

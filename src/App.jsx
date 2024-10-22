@@ -9,13 +9,14 @@ import Receipt from './components/Receipt';
 function App() {
   
   const [myBudget, setMyBudget] = useState(100000000000);
-  const [products, setProduct] = useState([]);
-  const [receipt, setReceipt] = useState([]);
+  const [products, setProduct] = useState([]); // urum listesi, baslangic degeri bos array
+  const [receipt, setReceipt] = useState([]); // kullanıcın aldigi urunler, baslangic degeri bos array
 
   useEffect(() => {
     setProduct(data); 
-}, []);
+  }, []); // sayfa ilk kez yuklendiginde data cekilir
 
+//fisi gucelleneyen fonk
 const handleReceiptUpdate = (productName, productQuantity, productPrice, productAmountResult, isBuy)  => {
   setReceipt(prevReceipt => {
     const existingItemIndex = prevReceipt.findIndex(item => item.productName === productName);
@@ -27,19 +28,19 @@ const handleReceiptUpdate = (productName, productQuantity, productPrice, product
 
     if (existingItemIndex !== -1) {
 
-      const updatedReceipt = [...prevReceipt];
+      const updatedReceipt = [...prevReceipt]; //guncellenmeden onceki fis
       updatedReceipt[existingItemIndex].productQuantity = productQuantity;
       updatedReceipt[existingItemIndex].productAmountResult = productAmountResult;
       updatedReceipt[existingItemIndex].productAmount = productPrice; 
-      return updatedReceipt;
+      return updatedReceipt;//guncellenmeden sonraki fis
     } else {
-
+      // fiste olmayan birurunse ekleme yapar
       return [...prevReceipt, { productName, productQuantity, productAmount: productPrice, productAmountResult }];
     }
   });
 
   const amountChange = isBuy ? -productPrice : productPrice; 
-  const newBudget = myBudget + amountChange; 
+  const newBudget = myBudget + amountChange;  // son butceyi hesaplar
 
   if (newBudget < 0) {
       alert("Bütçenizi aşıyorsunuz!");
@@ -47,8 +48,6 @@ const handleReceiptUpdate = (productName, productQuantity, productPrice, product
       setMyBudget(newBudget); 
   }
 };
-
-
 
 
   return (
